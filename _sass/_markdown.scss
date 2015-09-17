@@ -1,0 +1,23 @@
+
+.center-image
+{
+    margin: auto;
+    display: block;
+    float: center;
+}
+.center-image.normal
+{
+    margin: auto;
+    display: block;
+    float: center;
+    width:200px;
+    height: 360px;
+}
+.center-image.small
+{
+    margin: auto;
+    display: block;
+    float: center;
+    width:250px;
+    height: 200px;
+}
