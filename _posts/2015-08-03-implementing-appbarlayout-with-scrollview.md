@@ -19,7 +19,7 @@ As there were some bugs in AppbarLayout scrolling behavior, I got the requiremen
 
 Let's see the basic structure of the this implementation.
 
-{% highlight xml %}
+{% highlight xml linenos %}
 <FrameLayout>
 
     <ImageView

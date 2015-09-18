@@ -1,15 +1,28 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+permalink:            /:title
 relative_permalinks: true
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:       Shekar
+tagline:     The Jekyll Butler
+email:       shekarrex@gmail.com
+author:      Shekar
+description: "Android technical blog"
+url:         http://shekar.xyz/"
+date_format: "%b %-d, %Y"
 paginate:            1
 baseurl:             ""
+
+
+# Build settings
+markdown: kramdown
+kramdown:
+  # Enable GitHub Flavored Markdown (fenced code blocks)
+  input: GFM
+highlighter:      pygments
+
 
 # Assets
 #
@@ -18,15 +31,77 @@ sass:
   sass_dir:          _sass
   style:            :compressed
 
+#Default settings
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      author: Shekar
+      layout: "post"
+      category:  Android
+      # comments: true
+
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "pages" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "page"
+
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Shekar
+  url:               https://twitter.com/shekarrex
+  email:             shekarrex@gmail.com
+
+
+  # Google services
+google_analytics: true
+google_verification: true
+
+# Optional features
+animated:           false
+show_related_posts: false
+show_post_footers:  false
+show_social_icons:  true
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname: shekarxyz
+
+# Social icons
+github_username: shekarrex
+bitbucket_username:
+stackoverflow_id:
+twitter_username: shekarrex
+google_plus_id:
+linkedin_username:
+angellist_username:
+medium_id:
+bitcoin_url:
+paypal_url:
+flattr_button:
+
+# Post sharing icons
+show_sharing_icons: true
+share_text: ''
+# Change to 'true' to enable individual icons
+share_facebook: true
+share_twitter: true
+share_googleplus: true
+share_linkedin: true
+share_digg: false
+share_tumblr: false
+share_reddit: true
+share_stumbleupon: false
+share_hackernews: false
+
 
 # Custom vars
 version:             2.1.0
 github:
   repo:              https://github.com/poole/poole
 
-port: 5000
+port: 3005
