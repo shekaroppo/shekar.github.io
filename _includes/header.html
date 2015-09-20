@@ -1,0 +1,25 @@
+<header class="site-header ">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <div>
+          <a href="{{ site.url }}" class="site-title">
+            <img src="/public/images/logo.png" alt="Shekar" class="logo" />{{ site.title }} <br/>
+             <span class="site-subtitle">Android Developer | Thinker</span>
+          </a>
+        </div>
+      <nav class="site-nav">
+        <a href="{{ site.baseurl }}/about/">About</a>
+        <a href="{{ site.baseurl }}/contact/">Contact</a>
+      </nav>
+      <br/>
+      {% if site.show_social_icons %}
+      <div class="social-icons">
+        <div class="right">
+        {% include social_links.html %}
+      </div>
+        </div>
+          <div class="clearfix"></div>
+      {% endif %}
+    </div>
+  </div>
+</header>

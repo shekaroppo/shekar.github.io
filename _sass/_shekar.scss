@@ -21,3 +21,39 @@
     width:250px;
     height: 200px;
 }
+
+//Adding stripe at top of screen
+.stripes {
+    width: 100%;
+    height: 5px;
+    background-color: #03a2b2;
+}
+
+.stripes .stripe {
+  width: 12.5%;
+  height: 5px;
+  float: left; }
+
+.stripes #stripe1 {
+  background: #8A9BCC; }
+
+.stripes #stripe2 {
+  background: #C6F3FF; }
+
+.stripes #stripe3 {
+  background: #3A5399; }
+
+.stripes #stripe4 {
+  background: #FFAF86; }
+
+.stripes #stripe5 {
+  background: #C6F3FF; }
+
+.stripes #stripe6 {
+  background: #3A5399; }
+
+.stripes #stripe7 {
+  background: #FFAF86; }
+
+.stripes #stripe8 {
+  background: #8A9BCC; }

@@ -1,0 +1,87 @@
+.site-header {
+  padding-top: $space-1;
+  padding-bottom: $space-2;
+}
+
+.site-header a {
+  color: #333;
+  font-size: $h3;
+  font-weight: 300;
+}
+
+.site-header img {
+  display: inline;
+  max-width: 100%;
+}
+
+.site-header .site-title {
+  font-size: $h3;
+}
+
+.site-header .site-subtitle {
+    color: #333;
+  font-size: $h5;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.site-nav {
+//  margin-top: $space-2;
+}
+
+.site-header nav a {
+  color: #666;
+  font-size: $h5;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus,
+.site-header nav a:active {
+  color: #444;
+  opacity: 1;
+  border-bottom: 2px solid #444;
+}
+
+.site-nav a + a {
+  margin-left: 1em;
+}
+
+.site-header a:hover,
+.posts .post a:hover .post-meta,
+.posts .post a:hover .post-title,
+.posts .post a:hover .post-summary {
+  opacity: 0.88;
+}
+
+.site-header {
+  text-align: center;
+}
+
+.site-header .site-nav {
+  text-align: center;
+}
+
+.social-icons .left {
+  text-align: center;
+  float: left;
+}
+
+.social-icons .center {
+  text-align: center;
+  float: center;
+}
+
+ .social-icons .right {
+  text-align: center;
+  float: right;
+}
+
+.logo {
+   // margin: 1rem 0;
+   width: 80px;
+   border-radius: 50%;
+  vertical-align: middle;
+   margin-right: 0.3em;
+ }
