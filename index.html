@@ -5,6 +5,10 @@ title: Home
 
 <div class="posts">
   {% for post in paginator.posts %}
+  {% assign minutes = post.content | strip_html | number_of_words | divided_by: 180 %}
+  {% if minutes == 0 %}
+  {% assign minutes = 1 %}
+  {% endif %}
   <div class="post">
 
     {% if post.cover_image %}
@@ -18,13 +22,31 @@ title: Home
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <!-- <span class="post-date">{{ post.date | date_to_string }}</span> -->
+
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }} ·
+    <span  class="post-meta">
+  {% if page.minutes %}
+  {{ page.minutes }} min read
+  {% else %}
+  {{ minutes }} min read
+  {% endif %}
+  </span>
+    </time>
+
+
 
     {% if post.cover_image %}
     </div>
     </div>
     {% endif %}
-
+    <!-- <span  class="post-meta">
+  {% if page.minutes %}
+    {{ page.minutes }} minute read
+  {% else %}
+    {{ minutes }} minute read
+  {% endif %}
+  </span> -->
     <p class="post-summary">
         {% if post.summary %}
           {{ post.summary }}

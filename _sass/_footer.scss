@@ -17,6 +17,9 @@
       -ms-flex: 1;
           flex: 1;
 }
+.avatar {
+  width: 100px;
+  border-radius: 50%; }
 
 footer {
   background-color: $footer-bg-color;
@@ -24,6 +27,6 @@ footer {
   color: $footer-color;
   font-size: $footer-font-size;
   font-weight: $footer-font-weight;
-  padding: $footer-padding;
+  padding-top: $footer-padding;
   text-align: center;
 }
