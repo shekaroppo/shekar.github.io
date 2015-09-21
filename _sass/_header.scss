@@ -1,12 +1,12 @@
 .site-header {
-  padding-top: $space-1;
-  padding-bottom: $space-2;
+  padding-top: $space-3;
+  padding-bottom: $space-4;
 }
 
 .site-header a {
   color: #333;
-  font-size: $h3;
-  font-weight: 300;
+  font-size: $h4;
+  font-weight: 100;
 }
 
 .site-header img {
@@ -16,6 +16,7 @@
 
 .site-header .site-title {
   font-size: $h3;
+    font-weight: 200;
 }
 
 .site-header .site-subtitle {
@@ -26,12 +27,13 @@
 }
 
 .site-nav {
-//  margin-top: $space-2;
+  // margin-right: $space-2;
+  padding-top: $space-2;
 }
 
 .site-header nav a {
   color: #666;
-  font-size: $h5;
+  font-size: $h4;
   font-weight: 100;
   font-family: sans-serif;
 }
@@ -76,6 +78,8 @@
  .social-icons .right {
   text-align: center;
   float: right;
+  clear: right;
+  // margin-right: $space-1;
 }
 
 .logo {
