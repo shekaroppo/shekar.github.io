@@ -89,8 +89,7 @@ Let's see the basic structure of the this implementation.
 
   * The toolbar should stick at the top.
   * Title text should stick at the top.
-  * The status bar should be transparent initially and fade in with the
-    primary color.
+  * The status bar should be transparent initially and fade in with the primary color.
   * Image View should start below the status bar.
 
 **Step 3: Toolbar should stick at top**
