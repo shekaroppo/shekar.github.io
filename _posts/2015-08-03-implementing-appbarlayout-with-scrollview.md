@@ -68,19 +68,19 @@ Let's see the basic structure of the this implementation.
 
 ![Output](/public/images/3.png){: .center-image }
 
-  * ObservableScrollView provide vertical scroll value which is used to
+  * *ObservableScrollView* provide vertical scroll value which is used to
     scroll other views
-  * LinearLayout holds the actual content
-  * View(@id/paddingtop) provide top padding of 240dp so that main content
+  * *LinearLayout* holds the actual content.
+  * *View(@id/paddingtop)* provide top padding of 240dp so that main content
     start below header view.
-  * TextView(@id/main_content) this represent main content below header.
+  * *TextView(@id/main_content)* this represent main content below header.
 
 ![Output](/public/images/4.png){: .center-image }
 
-  * LinearLayout(@id/titletext_container) holds title text and the
+  * *LinearLayout(@id/titletext_container)* holds title text and the
     animating area
-  * TextView(@id/titletext) holds title text which will be scaled and translated on top of the action bar, its minimum height is equal to action bar height.
-  * View(@id/animating_space) This view provides space for title text
+  * *TextView(@id/titletext)* holds title text which will be scaled and translated on top of the action bar, its minimum  height is equal to action bar height.
+  * *View(@id/animating_space)* This view provides space for title text
     to animate. its height is (header height - action bar height).
 
 ![Output](/public/images/5.png){: .center-image }
@@ -94,7 +94,7 @@ Let's see the basic structure of the this implementation.
 
 **Step 3: Toolbar should stick at top**
 
-  * As Toolbar should be on top of scrolling content place it below ObservableScrollView. Also make toolbar transparent initially.
+  * As Toolbar should be on top of scrolling content, so place it below ObservableScrollView. Also make toolbar transparent initially.
 
   {% highlight xml %}
     <android.support.v7.widget.Toolbar
@@ -120,7 +120,7 @@ Let's see the basic structure of the this implementation.
      </LinearLayout>
   {% endhighlight %}
 
- ![Output](/public/images/97.gif){: .center-image }
+ ![Output](/public/images/54.gif){: .center-image }
 
   * If user scrolled the content more then flexibleRange, change the Toolbar color to primary else keep it transparent.
 
@@ -137,7 +137,7 @@ Let's see the basic structure of the this implementation.
     }
  {% endhighlight %}
 
-   ![Output](/public/images/99.gif){: .center-image }
+   ![Output](/public/images/53.gif){: .center-image }
 
   **Step 4: Status bar color change**
 
