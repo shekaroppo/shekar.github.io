@@ -6,13 +6,13 @@ relative_permalinks: true
 
 # Setup
 title:       Shekar
-tagline:     The Jekyll Butler
+ tagline:    Android Dev
 email:       shekarrex@gmail.com
 author:      Shekar
 description: "Android technical blog"
 url:         http://shekar.xyz/"
 date_format: "%b %-d, %Y"
-paginate:            1
+paginate:            5
 baseurl:             ""
 
 
