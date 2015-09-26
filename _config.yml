@@ -10,7 +10,7 @@ tagline:     Android Dev
 email:       shekarrex@gmail.com
 author:      Shekar
 description: "Android technical blog"
-url:         http://shekar.xyz/"
+url:         http://shekar.xyz/
 date_format: "%b %-d, %Y"
 paginate:            3
 baseurl:             ""
@@ -104,4 +104,4 @@ version:             2.1.0
 github:
   repo:              https://github.com/poole/poole
 
-port: 3008
+port: 3009
