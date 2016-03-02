@@ -4,76 +4,119 @@ date: 2015-09-03
 published: false
 ---
 
-1. What is dependency injection?
-The general concept behind dependency injection is called Inversion of Control. According to this concept a class should not configure its dependencies statically but should be configured from the outside.
-If the Java class creates an instance of another class via the new operator, it cannot be used (and tested) independently from this class and this is called a hard dependency.
-2. Using annotations to describe class dependencies
+1. **What is dependency injection?**
 
-The standard Java annotations for describing the dependencies of a class are defined in the Java Specification Request 330
-3. Where can objects be injected into a class?
+   The general concept behind dependency injection is called Inversion of Control. According to this concept a class should not configure its dependencies statically but should be configured from the outside.
+   If the Java class creates an instance of another class via the new operator, it cannot be used (and tested) independently from this class and this is called a hard dependency.
 
-      This is the order in which dependency injection is performed on a class
-Constructor injection
-Field injection
-Method injection
+2. **Using annotations to describe class dependencies**
+
+   The standard Java annotations for describing the dependencies of a class are defined in the Java Specification Request 330.
+
+3. **Where can objects be injected into a class?**
+
+   This is the order in which dependency injection is performed on a class
+     1. Constructor injection
+     2. Field injection
+     3. Method injection
+
+#### Dagger 1
+   * Developed by developers at Square.
+   * The way Dagger works
+       * Defining modules that contain provider methods for all the dependencies that you might want to inject.
+       * Loading these modules into an object graph.
+       * Finally injecting its contents into targets as needed.
+   * Issues
+       * Graph composition at runtime - hurts performance, especially in a per-request use case.
+       * Reflection (i.e. Class.forName() on generated types) - makes generated code hard to follow and ProGuard a nightmare to configure.
+       * Ugly generated code - especially, in comparison to similarly written manual instantiation from factories.
 
 
-Dagger 1
-Developed by developers at Square
-The way Dagger works
-Defining modules that contain provider methods for all the dependencies that you might want to inject
-Loading these modules into an object graph
-Finally injecting its contents into targets as needed.
-Issues
-Graph composition at runtime - hurts performance, especially in a per-request use case
-Reflection (i.e. Class.forName() on generated types) - makes generated code hard to follow and ProGuard a nightmare to configure
-Ugly generated code - especially, in comparison to similarly written manual instantiation from factories
-
-
-Dagger 2
-Developed by core libraries team at Google (creators or Guava)
-Dagger 2 is less dynamic than the others (no reflection usage at all).
-Fully traceable source code which mimics the code that user may write by hand.
-Advantage
-No more reflection - everything is done as concrete calls (ProGuard works with no configuration at all)
-No more runtime graph composition - improves performance, including the per-request cases (around 13% faster in Google's search products, according to Gregory Kick)
-Traceable - better generated code and no reflection help make the code readable and easy to follow
-API of Dagger 2
-
+#### Dagger 2
+  * Developed by core libraries team at Google (creators or Guava).
+  * Dagger 2 is less dynamic than the others (no reflection usage at all).
+  * Fully traceable source code which mimics the code that user may write by hand.
+  * Advantage
+     * No more reflection - everything is done as concrete calls (ProGuard works with no configuration at all).
+     * No more runtime graph composition - improves performance, including the per-request cases (around 13% faster in Google's search products, according to Gregory Kick).
+     * Traceable - better generated code and no reflection help make the code readable and easy to follow.
+  * API of Dagger 2
+  {% highlight java linenos %}
+  public @interface Component {
+    Class<?>[] modules() default {};
+    Class<?>[] dependencies() default {};
+  }
+  public @interface Subcomponent {
+    Class<?>[] modules() default {};
+  }
+  public @interface Module {
+    Class<?>[] includes() default {};
+  }
+  public @interface Provides {
+  }
+  public @interface MapKey {
+    boolean unwrapValue() default true;
+  }
+  public interface Lazy<T> {
+    T get();
+  }
+{% endhighlight %}
 
 Other elements defined by JSR-330
 
+{% highlight java linenos %}
+public @interface Inject { }
+public @interface Scope { }
+public @interface Qualifier { }
+{% endhighlight %}
 
-@Inject annotation
-Constructor injection
-@Inject annotation used in costructor also makes this class a part of dependencies graph
+#### @Inject annotation
+  * **Constructor injection**
+    * @Inject annotation used in costructor also makes this class a part of dependencies graph
 
- It means that it can also be injected when it’s needed i.e.
+     {% highlight java linenos %}
+     public class LoginActivityPresenter {
+	   private LoginActivity loginActivity;
+	   private UserDataStore userDataStore;
+	   private UserManager userManager;@Inject public LoginActivityPresenter(LoginActivity loginActivity, UserDataStore userDataStore, UserManager userManager) {
+		this.loginActivity = loginActivity;
+		this.userDataStore = userDataStore;
+		this.userManager = userManager;
+  	}
+  }
+{% endhighlight %}
 
-Limitation in this case is that we cannot annotate more than one constructor in class with @Inject
-Fields injection
-Annotate specific fields with @Inject
+   * It means that it can also be injected when it’s needed i.e.
+     {% highlight java linenos %}
+     public class LoginActivity extends BaseActivity {
+       @Inject LoginActivityPresenter presenter;
+     }
+    {% endhighlight %}
 
- Injection process has to be called “by hand”, before this call our  dependencies are null values.
+   * Limitation in this case is that we cannot annotate more than one constructor in class with @Inject
+ * Fields injection
+   * Annotate specific fields with @Inject
 
-Limitation in fields injection is that they cannot be private.
+   * Injection process has to be called “by hand”, before this call our  dependencies are null values.
 
-Methods injection
-Annotate specific method with @Inject
+   * Limitation in fields injection is that they cannot be private.
 
-All method parameters are provided from dependencies graph
-It will work in situations when we want to pass class instance itself (this reference) to injected dependencies
-Method injection is called immediately after constructor call, so it means that we are passing fully constructed this.
+ * Methods injection
+   * Annotate specific method with @Inject
 
-Lazy injections
-If there are many different injections in one target and some of them will only be used if some event occurs that doesn't always occur we can do a lazy injection.
+   * All method parameters are provided from dependencies graph
+   * It will work in situations when we want to pass class instance itself (this reference) to injected dependencies
+   * Method injection is called immediately after constructor call, so it means that we are passing fully constructed this.
 
-
-Provider injections
-Create multiple instances of an object, instead of just injecting one. For that situation you can inject a Provider<T>
+ * Lazy injections
+   * If there are many different injections in one target and some of them will only be used if some event occurs that doesn't always occur we can do a lazy injection.
 
 
-@Module annotation : With Module Dagger will know in which place required objects are constructed.
+ * Provider injections
+  * Create multiple instances of an object, instead of just injecting one. For that situation you can inject a Provider<T>
+
+
+#### @Module annotation : With Module Dagger will know in which place required objects are constructed.
 
 Example
 Context
