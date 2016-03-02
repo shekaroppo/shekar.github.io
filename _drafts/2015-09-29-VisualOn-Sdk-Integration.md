@@ -1,7 +1,7 @@
 ---
 title: VisualOn Sdk Integration
 date: 2015-09-03
-published: true
+published: false
 ---
 
   * OnStream MediaPlayer+ (OSMP+) is a multimedia player development kit enabling cross-platform content delivery and playback on connected devices including mobile handsets, tablets, desktops, set-top boxes, and smart TVs.
