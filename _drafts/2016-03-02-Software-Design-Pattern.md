@@ -2,8 +2,10 @@
     - Factory Pattern
       - [Ref1](https://www.youtube.com/watch?v=Bhh9rIMLdF0)
       - [Ref2]( https://www.youtube.com/watch?v=q9p-E19JFlA&list=PLmCsXDGbJHdjuUze0StiXHaA9StwfhYEi&index=2)
-      - [Ref3]( https://www.youtube.com/watch?v=ub0DXaeV6hA&list=PLF206E906175C7E07&index=5)
+      - [Derek Banas]( https://www.youtube.com/watch?v=ub0DXaeV6hA&list=PLF206E906175C7E07&index=5)
 - ###### Structural patterns
+  - Decorator Design Pattern
+      - [Derek Banas](https://www.youtube.com/watch?v=j40kRwSm4VE&list=PLF206E906175C7E07&index=11)
 - ###### Behavioural patterns
   - Observer Pattern
     - [Ref](https://www.youtube.com/watch?v=rWvXJo3OAzs&list=PL0912A06FFE3402EC)
@@ -12,10 +14,11 @@
     - [Ref2](https://www.youtube.com/watch?v=BsuhLJb6vo0)
   - Strategy Design Pattern:
       - [Ref](https://www.youtube.com/watch?v=-NCgRD9-C6o&index=3&list=PLF206E906175C7E07)
+  - Command Design Pattern
+    -
 - ###### Concurrency patterns
 - Reference
-  - [1](http://webpro.github.io/programming-principles/)
-  - [2](https://en.wikipedia.org/wiki/Software_design_pattern)
-  - [3](http://java-design-patterns.com/patterns/)
-  - [4](https://www.youtube.com/watch?v=vNHpsC5ng_E&list=PLF206E906175C7E07)
-    - [Design Pattern Practically]( https://www.youtube.com/embed/YDobmucohqk)
+  - [webpro](http://webpro.github.io/programming-principles/)
+  - [wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+  - [java-design-patterns](http://java-design-patterns.com/patterns/)
+  - [Design Pattern Practically]( https://www.youtube.com/embed/YDobmucohqk)
