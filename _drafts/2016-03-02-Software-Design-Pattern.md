@@ -13,12 +13,11 @@
     - [Ref1](https://www.youtube.com/watch?v=jDX6x8qmjbA&list=PLF206E906175C7E07&index=22)
     - [Ref2](https://www.youtube.com/watch?v=BsuhLJb6vo0)
   - Strategy Design Pattern:
-      - [Ref](https://www.youtube.com/watch?v=-NCgRD9-C6o&index=3&list=PLF206E906175C7E07)
+      -[Ref](https://www.youtube.com/watch?v=-NCgRD9-C6o&index=3&list=PLF206E906175C7E07)
   - Command Design Pattern
-    -
-- ###### Concurrency patterns
-- Reference
-  - [webpro](http://webpro.github.io/programming-principles/)
-  - [wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
-  - [java-design-patterns](http://java-design-patterns.com/patterns/)
-  - [Design Pattern Practically]( https://www.youtube.com/embed/YDobmucohqk)
+  - ###### Concurrency patterns
+  - Reference
+    - [webpro](http://webpro.github.io/programming-principles/)
+    - [wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+    - [java-design-patterns](http://java-design-patterns.com/patterns/)
+    - [Design Pattern Practically]( https://www.youtube.com/embed/YDobmucohqk)
