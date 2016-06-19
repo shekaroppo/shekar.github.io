@@ -11,10 +11,10 @@ author:      Shekar
 description: "Android technical blog"
 url:         http://shekar.xyz
 date_format: "%b %-d, %Y"
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-gist]
 paginate: 3
 baseurl:             ""
-exclude: [vendor] 
+exclude: [vendor]
 
 
 # Build settings
