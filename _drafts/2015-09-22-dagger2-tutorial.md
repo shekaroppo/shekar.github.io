@@ -1,10 +1,10 @@
 ---
 title: Dagger2 Tutorial
 date: 2015-09-03
-published: false
+published: true
 ---
 
-1. **What is dependency injection?**
+1. **What nice is dependency injection?**
 
    The general concept behind dependency injection is called Inversion of Control. According to this concept a class should not configure its dependencies statically but should be configured from the outside.
    If the Java class creates an instance of another class via the new operator, it cannot be used (and tested) independently from this class and this is called a hard dependency.
@@ -36,11 +36,12 @@ published: false
   * Developed by core libraries team at Google (creators or Guava).
   * Dagger 2 is less dynamic than the others (no reflection usage at all).
   * Fully traceable source code which mimics the code that user may write by hand.
-  * Advantage
+  - Advantage
      * No more reflection - everything is done as concrete calls (ProGuard works with no configuration at all).
      * No more runtime graph composition - improves performance, including the per-request cases (around 13% faster in Google's search products, according to Gregory Kick).
      * Traceable - better generated code and no reflection help make the code readable and easy to follow.
-  * API of Dagger 2
+  - API of Dagger 2
+
   {% highlight java linenos %}
   public @interface Component {
     Class<?>[] modules() default {};
@@ -78,7 +79,8 @@ public @interface Qualifier { }
      public class LoginActivityPresenter {
 	   private LoginActivity loginActivity;
 	   private UserDataStore userDataStore;
-	   private UserManager userManager;@Inject public LoginActivityPresenter(LoginActivity loginActivity, UserDataStore userDataStore, UserManager userManager) {
+	   private UserManager userManager;
+     @Inject public LoginActivityPresenter(LoginActivity loginActivity, UserDataStore userDataStore, UserManager userManager) {
 		this.loginActivity = loginActivity;
 		this.userDataStore = userDataStore;
 		this.userManager = userManager;
